@@ -1,0 +1,28 @@
+<div class="contentHeading" uk-grid>
+    <div class="uk-width-5-6@m">
+        <h3>Users</h3>
+    </div>
+    <div class="uk-width-1-6@m">
+        <a class="navButton uk-button uk-button-default" href="/addUser">+ Add User</a>
+    </div>
+</div>
+<table class="customTable uk-table uk-table-small uk-table-middle uk-table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th><div class="headerText">Name</div></th>
+            <th><div class="headerText">Email</div></th>
+            <th><div class="headerText">City</div></th>
+            <th><div class="headerText">Company</div></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td><div class="imageCropper"><img class="rounded" src="{{user.profilePic}}"/></div></td>
+            <td><a [routerLink]="['/users', user.id]">{{user.firstName}} {{user.lastName}}</a></td>
+            <td><a href="mailto:{{user.email}}">{{user.email}}</a></td>
+            <td>{{user.address.city}}</td>
+            <td><a href="{{user.company.website}}">{{user.company.name}}</a></td>
+        </tr>
+    </tbody>
+</table>

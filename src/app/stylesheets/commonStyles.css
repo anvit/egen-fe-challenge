@@ -1,0 +1,145 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    border: 1px solid transparent;
+    background: rgb(241, 241, 241);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Pagte loading spinner */
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    left: calc(50% - 60px);
+    top: calc(50% - 60px);
+    z-index: 100;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Primary font */
+my-app {
+    font-family: 'Lato';
+}
+
+.headerText {
+    color: #ff6600;
+    font-weight: 600;
+}
+
+/* Input validation styling*/
+input.ng-invalid.ng-touched {
+    border-left: 5px solid rgb(222, 67, 67);
+}
+
+input.ng-untouched {
+    border-left: 5px solid gray;
+}
+
+input.ng-valid.ng-touched {
+    border-left: 5px solid green;
+}
+
+.errorText {
+    color: rgb(222, 67, 67);
+}
+
+/* Overriding UIKit Sytling */
+.uk-offcanvas-bar {
+    background-color: rgba(85, 93, 104, 0.95);
+}
+
+.uk-button-default {
+    color: #ff6600;
+    border: 2px solid #ff6600;
+}
+
+.uk-button-default:hover{
+    color: #ee3400;
+    border: 2px solid #ee3400;
+}
+
+.uk-button-primary {
+    background-color: #ff6600;
+}
+
+.uk-button-primary:hover{
+    background-color: #ee3400;
+}
+
+.customNav.uk-navbar-container {
+    background: #fff;
+    box-shadow: 0 2px 3px #eee;
+}
+
+.uk-card-body {
+    margin-top: 20px;
+}
+
+.customTable {
+    background: #fff;
+}
+
+/* For profile pic with rounded border */
+.imageCropper {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ff6600;
+    position: relative;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+img.rounded{
+    height: 50px;
+    width: auto;
+    display: inline;
+    margin: 0 auto;
+}
+
+/* Padding and margins */
+.navLogo {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.contentHeading {
+    margin-top: 20px;
+}
+
+.cardItem {
+    margin-bottom: 20px;
+}
+
+.actionButton {
+    margin-top: 50px;
+}
+
+.navButton {
+    float: right;
+}

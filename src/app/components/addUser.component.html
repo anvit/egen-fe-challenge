@@ -1,0 +1,108 @@
+<div class="contentHeading" uk-grid>
+    <div class="uk-width-5-6@m">
+        <h3>Add User</h3>
+    </div>
+    <div class="uk-width-1-6@m">
+        <a class="navButton uk-button uk-button-default" href="/">< Back</a>
+    </div>
+</div>
+
+<div class="uk-card uk-card-default">
+    <div class="uk-card-body">
+        <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+            <div class="uk-grid-small" uk-grid>
+                <div class="uk-width-1-2">
+                    <label class="headerText" for="firstName">First Name</label>
+                    <input type="text" #firstNameField="ngModel" class="uk-input" id="firstName" name="firstName" placeholder="First Name" ngModel required pattern="^[a-zA-Z]{3,24}$">
+                    <small class="form-text errorText" [hidden]="firstNameField.valid || firstNameField.untouched">
+                        Please enter a valid first name
+                    </small>
+                </div>
+                <div class="uk-width-1-2">
+                    <label class="headerText" for="lastName">Last Name</label>
+                    <input type="text" #lastNameField="ngModel" class="uk-input" id="lastName" name="lastName" placeholder="Last Name" ngModel required pattern="^[a-zA-Z]{3,24}$">
+                    <small class="form-text errorText" [hidden]="lastNameField.valid || lastNameField.untouched">
+                        Please enter a valid last name
+                    </small>
+                </div>
+
+                <div class="uk-width-1-1">
+                    <label class="headerText" for="email">Email address</label>
+                    <input type="email" #emailField="ngModel" class="uk-input" id="email" name="email" placeholder="Enter email" ngModel required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+                    <small class="form-text errorText" [hidden]="emailField.valid || emailField.untouched">
+                        Please enter a valid email
+                    </small>
+                </div>
+            </div>
+            <hr class="uk-divider-small"/>
+            <div ngModelGroup="address">
+                <div class="uk-grid-small" uk-grid>
+                    <div class="uk-width-1-1">
+                        <label class="headerText" for="street">Street address</label>
+                        <input type="text" #streetField="ngModel" class="uk-input" id="street" name="street" placeholder="Street address" ngModel required>
+                        <small class="form-text errorText" [hidden]="streetField.valid || streetField.untouched">
+                            Please enter a valid street
+                        </small>
+                    </div>
+                    <div class="uk-width-1-2">
+                        <label class="headerText" for="city">City</label>
+                        <input type="text" #cityField="ngModel" class="uk-input" id="city" name="city" placeholder="City" ngModel required pattern="^[a-zA-Z ]{2,50}$">
+                        <small class="form-text errorText" [hidden]="cityField.valid || cityField.untouched">
+                            Please enter a valid city
+                        </small>
+                    </div>
+                    <div class="uk-width-1-2">
+                        <label class="headerText" for="state">State</label>
+                        <input type="text" #stateField="ngModel" class="uk-input" id="state" name="state" placeholder="State" ngModel required pattern="^[a-zA-Z ]{2,50}$">
+                        <small class="form-text errorText" [hidden]="stateField.valid || stateField.untouched">
+                            Please enter a valid state
+                        </small>
+                    </div>
+                    <div class="uk-width-2-3">
+                        <label class="headerText" for="country">Country</label>
+                        <input type="text" #countryField="ngModel" class="uk-input" id="country" name="country" placeholder="Country" ngModel required pattern="^[a-zA-Z ]{2,50}$">
+                        <small class="form-text errorText" [hidden]="countryField.valid || countryField.untouched">
+                            Please enter a valid country
+                        </small>
+                    </div>
+                    <div class="uk-width-1-3">
+                        <label class="headerText" for="zip">Zip Code</label>
+                        <input type="text" #zipField="ngModel" class="uk-input" id="zip" name="zip" placeholder="Zip Code" ngModel required pattern="^[0-9]{5,6}$">
+                        <small class="form-text errorText" [hidden]="zipField.valid || zipField.untouched">
+                            Please enter a valid zip code
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <hr class="uk-divider-small"/>
+            <div ngModelGroup="company">
+                <div class="uk-grid-small" uk-grid>
+                    <div class="uk-width-1-2">
+                        <label class="headerText" for="companyName">Company Name</label>
+                        <input type="text" class="uk-input" id="name" name="name" placeholder="Company Name" ngModel>
+                    </div>
+
+                    <div class="uk-width-1-2">
+                        <label class="headerText" for="companyWebsite">Company Website URL</label>
+                        <input type="text" #websiteField="ngModel" class="uk-input" id="website" name="website" placeholder="Company Website URL" ngModel pattern="^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$">
+                        <small class="form-text errorText" [hidden]="websiteField.valid || websiteField.untouched">
+                            Please enter a valid website name
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <hr class="uk-divider-small"/>
+            <div class="uk-grid-small" uk-grid>
+                <div class="uk-width-1-1">
+                    <label class="headerText" for="profilePic">Profile Photo URL</label>
+                    <input type="text" #urlField="ngModel" class="uk-input" id="profilePic" name="profilePic" ngModel placeholder="Enter a profile photo URL" ngModel pattern="^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$">
+                    <small class="form-text errorText" [hidden]="urlField.valid || urlField.untouched">
+                        Please enter a valid URL
+                    </small>
+                </div>
+            </div>
+
+            <button type="submit" class="actionButton uk-button uk-button-primary" [disabled]="!userForm.form.valid">Add User</button>
+        </form>
+    </div>
+</div>

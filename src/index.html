@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Egen FE Challenge</title>
+        <base href="/">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/css/uikit.min.css" />
+
+        <!-- jQuery required by UIkit -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- UIkit JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/js/uikit-icons.min.js"></script>
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400">
+
+        <!-- Polyfill(s) for older browsers -->
+        <script src="node_modules/core-js/client/shim.min.js"></script>
+
+        <script src="node_modules/zone.js/dist/zone.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+        <script src="systemjs.config.js"></script>
+        <script>
+          System.import('main.js').catch(function(err){ console.error(err); });
+        </script>
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="app/stylesheets/commonStyles.css">
+    </head>
+
+    <body>
+        <base href="/">
+        <div class="customNav uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-left">
+                <a href="/"><img class="navLogo" src="https://egen.solutions/images/egen-logo.png"/></a>
+            </div>
+            <div class="uk-navbar-right">
+                <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#my-id" uk-toggle></a>
+            </div>
+            <div id="my-id" uk-offcanvas="flip: true">
+                <div class="uk-offcanvas-bar">
+                    <h4><div class="headerText menuHeader">MENU</div></h4>
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                    <a href="/">List All Users</a>
+                    <hr class="uk-divider-small"/>
+                    <a href="/addUser">Add User</a>
+                </div>
+            </div>
+        </div>
+        <div class="uk-container uk-container-large">
+            <my-app><div class="loader"></my-app>
+        </div>
+    </body>
+</html>
